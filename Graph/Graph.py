@@ -34,44 +34,30 @@ class Matrix_Graph():
 
 ## Graph Implementation using adjacency list
 
-class Vertex():
-    def __init__(self,val):
-        self.data = val
-        self.neighbour = []
+
 
 
 ## Note : This is the implementation of UNDIRECTED GRAPH
 class Graph():
     
     def __init__(self):
-        self.root = None
-        self.adj = []
+        self.adj = {}
 
     def add_vertex(self,val):
-
-        v = Vertex(val)
-
-        if(self.root == None):
-            self.root = v
-            self.adj.append(v)
-        else:
-            self.adj.append(v)
+        self.adj[val] = []
 
     def add_edge(self,u,v):
-        if( u,v in self.adj):
-            for x in self.adj:
-                if(u == x.data):
-                    x.neighbour.append(v)
-        else:
-            print(f"Vertex {u} doesn't exists !!!")
-    
+        if(u not in self.adj):
+            self.adj[u] = []
+        
+        if(v not in self.adj):
+            self.adj[v] = []
+        
+        self.adj[u].append(v)
+        self.adj[v].append(u)
+
     def print_graph(self):
-        for i in self.adj:
-            print(i.data ,": ")
-            for j in i.neighbour:
-                print(j.data," ")
-
-
+        pass
 
 if __name__ == "__main__":
 
@@ -82,6 +68,6 @@ if __name__ == "__main__":
     g.add_vertex(25)
     g.add_vertex(26)
 
-    g.
+    g.add_edge(2,12)
     g.print_graph()
         
