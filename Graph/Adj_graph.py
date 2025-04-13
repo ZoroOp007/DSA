@@ -20,7 +20,7 @@ class Vertex():
 
         self.value = val
         self.neighbours = []      
-        self.color = "white"
+        self.color = "White"
         self.start_time = 0
         self.finish_time = 0
 
@@ -29,17 +29,16 @@ class Graph():
 
     ## Graph constructor
     def __init__(self):
-        self.root = None
-        self.vertices = {}
 
+        self.vertices = {}
 
     ## Function to add a new vertex in graph
     def add_vertex(self,val):
 
         node = Vertex(val)
 
-        if(self.root == None):
-            self.root = node
+        # if(self.root == None):
+        #     self.root = node
         
         self.vertices[val] = node
 
@@ -93,18 +92,12 @@ if __name__ == "__main__":
 
     G = Graph()
 
-    G.add_vertex(12)
-    G.add_vertex(2)
-    G.add_vertex(120)
-    G.add_vertex(11)
+    with open ("file1.txt") as fp:
+        n = int(fp.readline())
 
-    G.add_edge(12,2)
-    G.add_edge(2,6)
-
-    G.print_graph()
-
-    G.del_edge(2,6)
-
-    print("\n\n")
+        for i in range(n):
+            u , v = fp.readline().strip().split(" ")
+            
+            G.add_edge(int(u),int(v))
 
     G.print_graph()
