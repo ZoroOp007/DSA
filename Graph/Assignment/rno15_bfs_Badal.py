@@ -1,4 +1,4 @@
-from Adj_graph import Graph
+from Graph.Assignment.Adj_graph import Graph
 from Queue_DS import Queue
 ## Breadth first search : also known as level by level traversal
 
