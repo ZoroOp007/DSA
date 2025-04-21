@@ -13,7 +13,6 @@ def dfs(G):
 
 def dfs_visit(G,v):
 
-    print(G.adjacency_list)
     visited[v] = "grey"
 
     for neighbour in G.adjacency_list[v]:
@@ -27,8 +26,10 @@ def dfs_visit(G,v):
 if __name__ == '__main__':
     g = Graph()
 
+    #g.add_edge(5,6)
+    g.add_edge(2,4)
     g.add_edge(2,3)
-    g.add_edge(2,5)
+    g.add_edge(3,5)
+    g.add_edge(3,6)
     
-
     dfs(g)
